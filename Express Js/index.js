@@ -43,40 +43,80 @@
 
 
 
-import express from "express";
+// import express from "express";
 
-const app = express();
+// const app = express();
 
 
-app.use(express.json())
+// app.use(express.json())
 
-app.get("/" , (req,res) => {
-console.log("Request --->",req);
+// app.get("/" , (req,res) => {
+// console.log("Request --->",req);
 
-res.status(200).send("Server Hit Successfully!")
+// res.status(200).send("Server Hit Successfully!")
 
-})
+// })
 
-app.post("/signup" , (req,res) => {
-console.log("Request --->",req.body);
+// app.post("/signup" , (req,res) => {
+// console.log("Request --->",req.body);
 
-res.status(200).send("Server Hit Successfully User Data!")
+// res.status(200).send("Server Hit Successfully User Data!")
 
-})
+// })
 
-app.put("/user" , (req,res) => {
- console.log("req ---->" , req );
+// app.put("/user" , (req,res) => {
+//  console.log("req ---->" , req );
  
- res.status(200).send("User Updated Successfully!")
-})
+//  res.status(200).send("User Updated Successfully!")
+// })
 
-app.delete("/delete" , (req,res) => {
-console.log("req ---> " , req);
+// app.delete("/delete" , (req,res) => {
+// console.log("req ---> " , req);
 
- res.status(200).send("Deleted Successfully!")
-})
+//  res.status(200).send("Deleted Successfully!")
+// })
 
-app.listen(5500 , () => {
-console.log("Server Is Running on Port 5500");
+// app.listen(5500 , () => {
+// console.log("Server Is Running on Port 5500");
 
-})
+// })
+
+
+// import express from "express";
+
+// const app = express();
+
+
+// app.use(express.json())
+
+// app.get("/" , (req,res) => {
+//  console.log("Request --->",req);
+
+//  res.send("Successfully Open Dashboard!")
+ 
+// })
+
+
+// app.post("/signup" , (req,res) => {
+//     console.log("req" , req.body);
+
+//     res.send("Signup Loading || Running Successfully!")
+// })
+
+// app.put("/update" , (req,res) => {
+//   console.log("req --->",req.body)
+
+//    res.send("Edit || Update User Successfully!")
+// })
+
+// app.delete("/delete" , (req,res) => {
+
+//     console.log("request --->" ,req);
+
+//     res.send("User Deleted Successfully!")
+    
+// })
+
+// app.listen(5500,() => {
+//     console.log("Server Is Running on Port 5500")
+// })
