@@ -214,11 +214,33 @@
 // })
 
 import express from "express";
+import morgan from 'morgan'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+console.log(process.env.PORT);
 
 const app = express();
 
 // middleware
 app.use(express.json());
+
+// custom middleware or as a common we use as a example 
+app.use((req,res,next) => {
+  console.log("Hello from first Middle Ware");
+  next()
+})
+
+app.use((req,res,next) => {
+  req.time = new Date().toISOString()
+ console.log("Hello from the second middleware!");
+   next()
+})
+
+// morgan npm package as a middleware for logging 
+app.use(morgan("dev"))
+
 
 // database
 let users = [
@@ -254,7 +276,8 @@ app.get("/user" , (req,res) => {
   res.status(200).json({
     status : "true",
     msg : "user readed successfully!",
-    data : users
+    data : users,
+    time : req.time
   })
 })
 
@@ -319,8 +342,8 @@ app.delete("/user/:username" , (req,res) => {
   })
 })
 
-app.listen(5500, () => {
-  console.log("Server Is Running on Port 5500");
+app.listen(process.env.PORT, () => {
+  console.log(`Server Is Running on Port ${process.env.PORT}`);
 });
 
 
